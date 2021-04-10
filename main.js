@@ -18,19 +18,25 @@ class Media {
     return this._ratings;
   }
 
+  // Setters
+  set isCheckedOut(isChecked) {
+    this._isCheckedOut = isChecked;
+  }
+
   // Methods
   getAverageRating() {
   
   }
 
   toggleCheckOutStatus() {
-
+    const changeValue = this._isCheckedOut ? false : true;
+    this._isCheckedOut = changeValue;
   }
 
   addRating() {
 
   }
-};
+}
 
 class Book extends Media {
   constructor(author, title, pages) {
@@ -82,3 +88,9 @@ class CD extends Media {
     return this._songs;
   }
 };
+
+const mediaOne = new Media('hello World');
+
+console.log(mediaOne.isCheckedOut);
+mediaOne.toggleCheckOutStatus();
+console.log(mediaOne.isCheckedOut);
