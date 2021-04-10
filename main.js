@@ -39,8 +39,8 @@ class Media {
     this._isCheckedOut = changeValue;
   }
 
-  addRating() {
-
+  addRating(rate) {
+    this._ratings.push(rate);
   }
 }
 
