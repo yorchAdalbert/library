@@ -25,7 +25,13 @@ class Media {
 
   // Methods
   getAverageRating() {
-  
+    let sum = 0;
+    const rates = this._ratings.length;
+
+    for (let i = 0; i < rates; i++)
+      sum += this._ratings[i];
+
+    return sum / rates;
   }
 
   toggleCheckOutStatus() {
