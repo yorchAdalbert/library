@@ -33,17 +33,52 @@ class Media {
 };
 
 class Book extends Media {
-  constructor() {
+  constructor(author, title, pages, isCheckedOut, ratings) {
+    super(title, isCheckedOut, ratings);
+    this._author = author;
+    this._pages = pages;
+  }
+
+  // Subclass Getters
+  get author() {
+    return this._author;
+  }
+
+  get pages() {
+    return pages;
   }
 };
 
 class Movie extends Media {
-  constructor() {
+  constructor(director, title, runTime, isCheckedOut, ratings) {
+    super(title, isCheckedOut, ratings);
+    this._director = director;
+    this._runTime = runTime;
+  }
+
+  // Subclass Getters
+  get director() {
+    return this._director;
+  }
+
+  get runTime() {
+    return this._runTime;
   }
 };
 
 class CD extends Media {
-  constructor() {
+  constructor(artist, title, isCheckedOut, ratings, songs) {
+    super(title, isCheckedOut, ratings);
+    this._artist = artist;
+    this._songs = songs;
+  }
 
+  // Subclass Getters
+  get artist() {
+    return this._artist;
+  }
+
+  get songs() {
+    return this._songs;
   }
 };
