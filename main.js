@@ -59,7 +59,7 @@ class Book extends Media {
   get pages() {
     return pages;
   }
-};
+}
 
 class Movie extends Media {
   constructor(director, title, runTime) {
@@ -76,7 +76,7 @@ class Movie extends Media {
   get runTime() {
     return this._runTime;
   }
-};
+}
 
 class CD extends Media {
   constructor(artist, title, songs) {
@@ -93,10 +93,29 @@ class CD extends Media {
   get songs() {
     return this._songs;
   }
-};
+}
 
-const mediaOne = new Media('hello World');
+// Testing the classes
 
-console.log(mediaOne.isCheckedOut);
-mediaOne.toggleCheckOutStatus();
-console.log(mediaOne.isCheckedOut);
+// Book class
+const historyOfEverything = new Book('Bill Bryson', 
+                                     'A short Hystory of Nearly Everything',
+                                      544);
+
+historyOfEverything.addRating(4);
+historyOfEverything.addRating(5);
+historyOfEverything.addRating(5);
+historyOfEverything.toggleCheckOutStatus();
+console.log(historyOfEverything.getAverageRating());
+console.log(historyOfEverything.isCheckedOut);
+
+// Movie class
+const speed = new Movie('Jan de Bont', 'Speed', 116);
+
+speed.addRating(1);
+speed.addRating(1);
+speed.addRating(5);
+speed.toggleCheckOutStatus();
+console.log(speed.getAverageRating());
+console.log(speed.isCheckedOut);
+
