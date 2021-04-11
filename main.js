@@ -40,7 +40,10 @@ class Media {
   }
 
   addRating(rate) {
-    this._ratings.push(rate);
+    if (rate > 0 && rate < 6)
+      this._ratings.push(rate);
+    else
+      console.log('The rate should be between 1 and 5');
   }
 }
 
@@ -102,9 +105,10 @@ const historyOfEverything = new Book('Bill Bryson',
                                      'A short Hystory of Nearly Everything',
                                       544);
 
+historyOfEverything.addRating(0);
+historyOfEverything.addRating(6);
+historyOfEverything.addRating(5);
 historyOfEverything.addRating(4);
-historyOfEverything.addRating(5);
-historyOfEverything.addRating(5);
 historyOfEverything.toggleCheckOutStatus();
 console.log(historyOfEverything.getAverageRating());
 console.log(historyOfEverything.isCheckedOut);
